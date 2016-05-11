@@ -6,15 +6,27 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script type="text/javascript" src="assets/js/game.js"></script>
+  <script type="text/javascript" src="assets/js/game.js"></script>
+
 </head>
 <body>
   <div class="container">
     <h1>Welcome to Arnold's Hangman Game!</h1>
-    <div class="gameArea">
-      <div>
-        
+      <div class="row">
+        <div class="gameArea col-md-8">
+          <div>
+            <h2>Guess the Artist's Name!</h2>
+            <h3 id="artistName"></h3>
+          </div>
+      </div>
+      <div class="infoArea col-md-4">
+        <div>
+          <h2>Number of Guesses Left</h2>
+          <h3 id="guessLeft"></h3>
+        </div>
       </div>
     </div>
-  </div>
+  </div><!--End of Container-->
 </body>
 </html>
