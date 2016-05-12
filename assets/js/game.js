@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
   var nameBank =['Billie Holiday', 'Ella Firtzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman'];
 
@@ -10,11 +10,12 @@ window.onload = function () {
 
   var guessLeft =  9;
 
+  var result = blanks(selectName);
+
   document.getElementById('guessLeft').innerText = guessLeft;
 
-  artistName.textContent = blanks(selectName);
+  artistName.textContent = result;
 
-  revealAt(guesses, name);
+  revealAt(guesses, selectName, result);
 
-}
 

@@ -11,6 +11,22 @@ function chooseName(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }  
 
-function revealAt(guess, name){
-  for (i = 0; guess)
+// for each element in guess iterate through the name 
+
+function revealAt(guess, name, result){
+  for (i = 0; i < name.length; ++i){
+    for (x = 1; x < guess.length; ++x){
+      if (guess[x] === name[i]){
+        result[x] = guess[x];
+        console.log(guess[x]);
+      }
+    }
+  }
 }
+
+// function guessResults(name, guess) {
+//   for (i = 0; i < name.length; ++i){
+//     for( name.indexOf())
+//   }
+// }
+
