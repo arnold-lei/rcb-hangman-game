@@ -1,11 +1,12 @@
 
 
-  var nameBank =['Billie Holiday', 'Ella Firtzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman'];
+  var nameBank =['Billie Holiday', 'Ella Firtzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
 
   var selectName = chooseName(nameBank);
   var nameLength = selectName.length
 
   var artistName = document.getElementById('artistName');
+  // artist container
 
   var guesses =['a', 'e', 'i', 'o', 'u'];
 
@@ -21,10 +22,10 @@
 
   revealAt(guesses, selectName, result);
 
-  // insertToDoc(guesses, guessLetters);
+  insertToDoc('guesses', 'guessLetters');
 
   artistName.textContent = result;
 
-document.getElementById('guessLetters').innerText = guesses;
+// document.getElementById('guessLetters').innerText = guesses;
 
 

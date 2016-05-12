@@ -22,16 +22,23 @@ function revealAt(guess, name, result){
   }
 }
 
-function insertGuess(arr){
-  arr.push(document.getElementById("userGuess").submit());
-}
-
-// function insertToDoc (arr, id){
-//   var text = ''
-//   for (i = 0; i > arr.length; ++i){
-//     text += arr[i];
-//   }
-//   document.getElementById(id).innerText += text; 
+// function insertGuess(event){
+//   event.preventDefault();
+//   guesses.push(document.getElementById('userGuess').value);
+//   alert(guesses);
 // }
 
+function insertToDoc (arr, id){
+  var text = ''
+  for (i = 0; i > arr.length; ++i){
+    text += arr[i];
+  }
+  document.getElementById(id).innerText += text; 
+}
 
+
+function insertGuess(){
+  document.getElementById("submitGuess").addEventListener("click", function(){
+    guesses.push(document.getElementById('userGuess').value);
+});
+}
