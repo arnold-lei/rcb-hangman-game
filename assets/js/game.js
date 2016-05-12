@@ -4,15 +4,17 @@ window.onload = function () {
 
   var selectName = chooseName(nameBank);
 
-  var artistName = document.getElementById("artistName");
+  var artistName = document.getElementById('artistName');
 
-
+  var guesses =['a', 'e', 'i', 'o', 'u'];
 
   var guessLeft =  9;
 
-  document.getElementById("guessLeft").innerText = guessLeft;
+  document.getElementById('guessLeft').innerText = guessLeft;
 
   artistName.textContent = blanks(selectName);
+
+  revealAt(guesses, name);
 
 }
 

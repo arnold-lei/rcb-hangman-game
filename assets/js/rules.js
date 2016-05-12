@@ -11,3 +11,6 @@ function chooseName(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }  
 
+function revealAt(guess, name){
+  for (i = 0; guess)
+}
