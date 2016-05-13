@@ -1,31 +1,50 @@
-
+  
+  var alphabet = alphabet('a', 'z');
 
   var nameBank =['Billie Holiday', 'Ella Firtzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
 
   var selectName = chooseName(nameBank);
-  var nameLength = selectName.length
 
-  var artistName = document.getElementById('artistName');
   // artist container
+  var artistName = document.getElementById('artistName');
 
-  var guesses =['a', 'e', 'i', 'o', 'u'];
+
+  var guesses =[];
 
   var results = [];
 
   var guessLeft =  9;
 
-  var result = blanks(results, nameLength);
+  var result = blanks(results, selectName);
 
-  document.getElementById('guessLeft').innerText = guessLeft;
+  document.onkeyup = function(event) {
+
+    // stores user input in this variable
+
+    var userGuess = uniqueGuess(keyVal(alphabet, String.fromCharCode(event.keyCode).toLowerCase()), guesses);
+
+    // pushes the user input to the guessess array 
+
+    guesses.push(userGuess);
+    guessLeft -= 1;
+
+    // for testing
+
+    console.log(userGuess);
 
 
 
-  revealAt(guesses, selectName, result);
+    revealAt(guesses, selectName, results);
 
-  insertToDoc('guesses', 'guessLetters');
+    document.getElementById('artistName').textContent = results;
 
-  artistName.textContent = result;
+    document.getElementById('guessLeft').innerText = guessLeft;
+
+    document.getElementById('guessLetters').innerText = guesses;
+
+    // revealAt(guesses, selectName, result);
+    // artistName.textContent = result;
 
 // document.getElementById('guessLetters').innerText = guesses;
 
-
+}
