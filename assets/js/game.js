@@ -25,14 +25,7 @@
 
     // pushes the user input to the guessess array 
 
-    guesses.push(userGuess);
-    guessLeft -= 1;
-
-    // for testing
-
-    console.log(userGuess);
-
-
+    guessVal(userGuess, guesses, guessLeft);
 
     revealAt(guesses, selectName, results);
 

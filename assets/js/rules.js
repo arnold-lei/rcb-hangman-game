@@ -11,7 +11,7 @@ function alphabet(charA, charZ) {
 // fills in the blanks
 function blanks(result, name) {
   for(i = 0; i < name.length; ++i) {
-    result.push(' ' + '_' + ' ');
+    result.push('_');
     }   
   }
 
@@ -25,7 +25,7 @@ function revealAt(guessed, name, result){
   for (i = 0; i < name.length; ++i){
     for (x = 0; x < guessed.length; ++x){
       if ((guessed[x] === name[i].toLowerCase()) || (name[i] === ' ')){
-       result[i] = ' ' + name[i];
+       result[i] = name[i];
        console.log(result[i]);
       } else{
       }
@@ -39,12 +39,7 @@ function uniqueGuess(guess, guessed){
   }
 }
 
-// function insertGuess(event){
-//   event.preventDefault();
-//   guesses.push(document.getElementById('userGuess').value);
-//   alert(guesses);
-// }
-
+// Failed experiment to write a function to add js variables to the html doc
 function insertToDoc (arr, id){
   var text = ''
   for (i = 0; i > arr.length; ++i){
@@ -53,15 +48,26 @@ function insertToDoc (arr, id){
   document.getElementById(id).innerText += text; 
 }
 
-
+// Makes sure the guess is an letter in the alphabet
 function keyVal(arr, key){
-  if (arr.indexOf(key) === -1){
+  if (arr.indexOf(key) == -1){
     
   } else{
-      return key;
+   return key;
   }
 }
 
-function winCondition(){
+//makes sure only unique guesses are saved and also subtracts the number of guesses left
+function guessVal(letter, arr, guess){
+  if((arr.indexOf(letter) == -1) && letter != undefined){
+    arr.push(letter);
+    guess = guess - 1;
+  }else{
+    console.log('you have already guessed this letter');
+  }
+}
 
+
+function winCondition(){
+  
 }
