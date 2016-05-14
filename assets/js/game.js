@@ -1,33 +1,39 @@
   
+  //Generate the legal moves (anythin in the alphabet)
   var alphabet = alphabet('a', 'z');
 
-  var nameBank =['Billie Holiday', 'Ella Firtzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
+  // Word back of names 
+  var nameBank =['Billie Holiday', 'Ella Fitzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
 
+  //Chooeses a random name form the word bank
   var selectName = chooseName(nameBank);
 
-  // artist container
+  // Gets the artist name ID container
   var artistName = document.getElementById('artistName');
 
+  //Where we store the user guesses
+  var guesses = [];
 
-  var guesses =[];
-
+  //Where we store the correct guesses
   var results = [];
 
-  var guessLeft =  9;
+  //Number of guesses left
+  var guessLeft =  2;
 
+  //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
 
+  //Event listener for user keypress
   document.onkeyup = function(event) {
 
-    // stores user input in this variable
-
+    // stores user input in this variable, only accepts unique keys and valid keys
     var userGuess = uniqueGuess(keyVal(alphabet, String.fromCharCode(event.keyCode).toLowerCase()), guesses);
 
     // pushes the user input to the guessess array 
+    guessVal(userGuess, guesses);
 
-    guessVal(userGuess, guesses, guessLeft);
-
-    revealAt(guesses, selectName, results);
+    //If the user guesses correctly it will reveal in the blank tiles where the letter was
+    revealAt(userGuess, selectName, results, guessLeft);
 
     document.getElementById('artistName').textContent = results;
 
@@ -35,9 +41,8 @@
 
     document.getElementById('guessLetters').innerText = guesses;
 
-    // revealAt(guesses, selectName, result);
-    // artistName.textContent = result;
+    // document.getElementById('answer').innerText = selectName;
 
-// document.getElementById('guessLetters').innerText = guesses;
+    winCondition(removeComma(results), selectName, guessLeft);
 
 }
