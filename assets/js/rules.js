@@ -91,6 +91,10 @@ var show = function(id){
   document.getElementById(id).style.display = 'block';
 }
 
+var hide = function(id){
+  document.getElementById(id).style.display = 'none';
+}
+
 function winCondition(result, name, guess){
   if (result == name) {
     show('success');
@@ -101,3 +105,10 @@ function winCondition(result, name, guess){
     console.log('Sorry you lost');
   }
 }
+
+document.getElementById("submit").addEventListener("click", userName);
+
+function setName(){
+  userName = document.getElementById('userName').value;
+}
+

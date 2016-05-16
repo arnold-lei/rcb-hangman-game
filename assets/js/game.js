@@ -2,6 +2,8 @@
   //Generate the legal moves (anythin in the alphabet)
   var alphabet = chars('a', 'z');
 
+  var userName;
+  
   // Word back of names 
   var nameBank =['Billie Holiday', 'Ella Fitzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
 
@@ -23,8 +25,14 @@
   //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
 
+  document.getElementById('gameboard').style.display = 'none'
+
   //Event listener for user keypress
   document.onkeyup = function(event) {
+
+    hide('welcomeMessage');
+
+    show('gameboard');
 
     // stores user input in this variable, only accepts unique keys and valid keys
     var userGuess = uniqueGuess(keyVal(alphabet, String.fromCharCode(event.keyCode).toLowerCase()), guesses);
