@@ -1,6 +1,6 @@
 
 //Generates an alphabet
-function alphabet(charA, charZ) {
+function chars(charA, charZ) {
     var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
     for (; i <= j; ++i) {
         a.push(String.fromCharCode(i));
@@ -47,10 +47,16 @@ function revealAt(userGuess, name, result){
       result[i] = arrName[i];
     }
   }
-  if(arrName.indexOf(userGuess) == -1){
+  if((arrName.indexOf(userGuess) == -1) && (alphabet.indexOf(userGuess) != -1)){
     guessLeft--;
   }
 } 
+
+var isUnique = function(guess, guessed){
+  if (guessed.indexOf(guess) === -1){
+    return guess;
+  }
+}
 
 //Will not allow letters you've guessed before
 function uniqueGuess(guess, guessed){
@@ -81,10 +87,17 @@ function removeComma(arr){
   return arr.toString().replace(/\,/g,'');
 }
 
+var show = function(id){
+  document.getElementById(id).style.display = 'block';
+}
+
 function winCondition(result, name, guess){
   if (result == name) {
-   console.log('Congratulations you\'ve won!');
+    show('success');
+    document.getElementById('success').textContent ='Congratulations you\'ve won!';
   }else if (guess <= 0 ){
+    show('fail');
+    document.getElementById('fail').textContent ='Sorry you lost!';
     console.log('Sorry you lost');
   }
 }

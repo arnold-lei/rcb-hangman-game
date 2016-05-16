@@ -1,6 +1,6 @@
   
   //Generate the legal moves (anythin in the alphabet)
-  var alphabet = alphabet('a', 'z');
+  var alphabet = chars('a', 'z');
 
   // Word back of names 
   var nameBank =['Billie Holiday', 'Ella Fitzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
@@ -18,7 +18,7 @@
   var results = [];
 
   //Number of guesses left
-  var guessLeft =  2;
+  var guessLeft =  9;
 
   //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
