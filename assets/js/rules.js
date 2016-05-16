@@ -20,6 +20,7 @@ function blanks(result, name) {
   }  
 }
 
+//Choose a random name
 function chooseName(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }  
