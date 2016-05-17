@@ -14,29 +14,22 @@ function blanks(result, name) {
   for(i = 0; i < name.length; ++i) {
     if(arrName[i] == ' '){
       result.push(' ')
-    }else{
+    }else if (arrName[i] != ','){
     result.push('_');
     } 
   }  
+}
+
+// turns results array into a string
+function stringify(arr){
+  var string = arr.toString();
+  return string.replace(/,/g, '');
 }
 
 //Choose a random name
 function chooseName(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }  
-
-// for each element in guess iterate through the name 
-// function revealAt(guessed, name, result, guess){
-//   for (i = 0; i < name.length; ++i){
-//     for (x = 0; x < guessed.length; ++x){
-//       if ((guessed[x] === name[i].toLowerCase()) || (name[i] === ' ')){
-//        result[i] = name[i];
-//       } else{
-//         guess = guess - 1;
-//       }
-//     }
-//   }
-// }
 
 // for each element in guess iterate through the name 
 function revealAt(userGuess, name, result){
@@ -106,9 +99,4 @@ function winCondition(result, name, guess){
   }
 }
 
-document.getElementById("submit").addEventListener("click", userName);
-
-function setName(){
-  userName = document.getElementById('userName').value;
-}
 

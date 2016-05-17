@@ -2,8 +2,6 @@
   //Generate the legal moves (anythin in the alphabet)
   var alphabet = chars('a', 'z');
 
-  var userName;
-  
   // Word back of names 
   var nameBank =['Billie Holiday', 'Ella Fitzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
 
