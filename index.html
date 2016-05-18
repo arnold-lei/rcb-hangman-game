@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+  <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -26,7 +26,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a>Number of Wins <span class="badge">0</span></a></li>
+        <li><a>Number of Wins <span class= "badge" id="winCount"></span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -37,8 +37,24 @@
   </div>
   <div id="gameboard">
     <h1>Welcome to Arnold's Hangman Game!</h1>
-    <div class="alert alert-success" role="alert" id="success"></div>
-    <div class="alert alert-danger" role="alert" id="fail"></div>
+
+    <!-- win message -->
+    <div class="alert alert-success row" role="alert" id="success">
+      <div class="winMsg pull-left"></div>
+      <div class="btn-group pull-right" role="group" aria-label="">       
+        <button type="button" class="btn btn-success">Replay</button>
+        <button type="button" class="btn btn-success">Quit</button>
+      </div>
+    </div>
+
+    <!-- lose message -->
+    <div class="alert alert-danger row" role="alert" id="fail">
+      <div class="loseMsg pull-left"></div>
+      <div class="btn-group pull-right" role="group" aria-label="">
+        <button type="button" class="btn btn-danger">Replay</button>
+        <button type="button" class="btn btn-danger">Quit</button>
+      </div>
+    </div>
     <h1 id="answer"></h1>
       <div class="row">
         <div class="gameArea col-md-8">

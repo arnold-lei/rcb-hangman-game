@@ -14,7 +14,7 @@ function blanks(result, name) {
   for(i = 0; i < name.length; ++i) {
     if(arrName[i] == ' '){
       result.push(' ')
-    }else if (arrName[i] != ','){
+    }else{
     result.push('_');
     } 
   }  
@@ -91,10 +91,11 @@ var hide = function(id){
 function winCondition(result, name, guess){
   if (result == name) {
     show('success');
-    document.getElementById('success').textContent ='Congratulations you\'ve won!';
+    winCount = winCount + 1;
+    document.querySelector('.winMsg').textContent ='Congratulations you\'ve won!';
   }else if (guess <= 0 ){
     show('fail');
-    document.getElementById('fail').textContent ='Sorry you lost!';
+    document.querySelector('.loseMsg').textContent ='Sorry you lost!';
     console.log('Sorry you lost');
   }
 }

@@ -11,6 +11,14 @@
   // Gets the artist name ID container
   var artistName = document.getElementById('artistName');
 
+  var wins = document.getElementById('winCount');
+
+  var guessCount = document.getElementById('guessLeft');
+
+  var guessLetter = document.getElementById('guessLetters');
+
+  var gameboard =  document.getElementById('gameboard');
+
   //Where we store the user guesses
   var guesses = [];
 
@@ -18,12 +26,16 @@
   var results = [];
 
   //Number of guesses left
-  var guessLeft =  9;
+  var guessLeft =  1;
+
+  var winCount = 0; 
+
+  
 
   //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
 
-  document.getElementById('gameboard').style.display = 'none'
+  hide('gameboard');
 
   //Event listener for user keypress
   document.onkeyup = function(event) {
@@ -41,11 +53,13 @@
     //If the user guesses correctly it will reveal in the blank tiles where the letter was
     revealAt(userGuess, selectName, results, guessLeft);
 
-    document.getElementById('artistName').textContent = results;
+    artistName.textContent = results;
 
-    document.getElementById('guessLeft').innerText = guessLeft;
+    guessCount.innerText = guessLeft;
 
-    document.getElementById('guessLetters').innerText = guesses;
+    guessLetter.innerText = guesses;
+
+    wins.innerHTML = winCount;
 
     // document.getElementById('answer').innerText = selectName;
 
