@@ -88,6 +88,7 @@ var hide = function(id){
   document.getElementById(id).style.display = 'none';
 }
 
+
 function winCondition(result, name, guess){
   if (result == name) {
     show('success');
@@ -99,5 +100,3 @@ function winCondition(result, name, guess){
     console.log('Sorry you lost');
   }
 }
-
-

@@ -1,4 +1,4 @@
-  
+
   //Generate the legal moves (anythin in the alphabet)
   var alphabet = chars('a', 'z');
 
@@ -29,8 +29,6 @@
   var guessLeft =  1;
 
   var winCount = 0; 
-
-  
 
   //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
