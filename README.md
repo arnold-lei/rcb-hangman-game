@@ -8,4 +8,17 @@ I am having a lot of difficulty with this homework assignment. Still a lot ot le
 
 I think this project is a bit of a mess. There are some functions I should have stored into variabls. Next time I will create a variable called 'isUnique' where I can figure out if a user guess is unique or not. Also I may not build it all in functions next time. I may start with a more linear way and then crate the functions out that way. 
 
-I am starting to think I went about this in the complete wrong way. My rule.js file is getting really out of hand. I should have gone with an OOP approace. I tried for a very long time to convert the whole thing to an object but now it's a little too late to do that. I  have some test files where I tried but nothing really worked. 
+I am starting to think I went about this in the complete wrong way. My rule.js file is getting really out of hand. I should have gone with an OOP approace. I tried for a very long time to convert the whole thing to an object but now it's a little too late to do that. I  have some test files where I tried but nothing really worked. I've been tweaking this thing forever, at some point i'm going to have to add some styling to it. Honestly I like adding features over styling right now. 
+
+##Heroku
+
+The app can be found here on Heroku:
+rcb-arnold-hangman-game.herokuapp.com
+
+##To-Do Feature List
+
+*add a quit feature
+*remove commas from the results
+*stop the gameboard from appearing on load
+*style the site
+*user controled variable guess counts

@@ -1,3 +1,1 @@
-hide('gameboard');
-
 game();
