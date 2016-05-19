@@ -1,3 +1,44 @@
+  //Generate the legal moves (anythin in the alphabet)
+  var alphabet = chars('a', 'z');
+
+  // Word back of names 
+  var nameBank =['Billie Holiday', 'Ella Fitzgerald', 'Artie Shaw','Duke Ellington', 'Benny Goodman', 'Gene Krupa', 'Jimmie Lunceford', 'Count Basie'];
+
+  //Chooeses a random name form the word bank
+  var selectName = chooseName(nameBank);
+
+  //Number of guesses left
+  var gameGuessCount =  9;
+
+  var guessLeft = gameGuessCount;
+
+  // Gets the artist name ID container
+  var artistName = document.getElementById('artistName');
+
+  var wins = document.getElementById('winCount');
+
+  var guessCount = document.getElementById('guessLeft');
+
+  var guessLetter = document.getElementById('guessLetters');
+
+  var gameboard =  document.getElementById('gameboard');
+
+  //Where we store the user guesses
+  var guesses = [];
+
+  //Where we store the correct guesses
+  var results = [];
+
+  var winCount = 0; 
+
+  //setting up the artist name to be guessed in blank tiles
+  var result = blanks(results, selectName);
+
+  var resetEl = document.getElementById('reset');
+
+  var playagain = true;
+  
+  // resetEl.addEventListener('click', reset()); 
 
 //Generates an alphabet
 function chars(charA, charZ) {
@@ -80,11 +121,11 @@ function removeComma(arr){
   return arr.toString().replace(/\,/g,'');
 }
 
-var show = function(id){
+function show(id){
   document.getElementById(id).style.display = 'block';
 }
 
-var hide = function(id){
+function hide(id){
   document.getElementById(id).style.display = 'none';
 }
 
@@ -93,10 +134,74 @@ function winCondition(result, name, guess){
   if (result == name) {
     show('success');
     winCount = winCount + 1;
+    wins.innerHTML = winCount;
     document.querySelector('.winMsg').textContent ='Congratulations you\'ve won!';
+    return true;
   }else if (guess <= 0 ){
     show('fail');
     document.querySelector('.loseMsg').textContent ='Sorry you lost!';
     console.log('Sorry you lost');
+  }
+}
+
+function reset(){
+
+  //Chooeses a random name form the word bank
+  selectName = chooseName(nameBank);
+
+  //Where we store the user guesses
+  guesses = [];
+
+  //Where we store the correct guesses
+  results = [];
+
+  //Number of guesses left
+  guessLeft =  gameGuessCount;
+
+  //Chooeses a random name form the word bank
+  selectName = chooseName(nameBank);
+
+  artistName.textContent = results;
+
+  var result = blanks(results, selectName);
+
+  guessCount.innerText = guessLeft;
+
+  guessLetter.innerText = guesses;
+
+  document.querySelector('#success').style.display = 'none';
+
+  document.querySelector('#fail').style.display = 'none';
+
+  console.log('reset!');
+}
+
+function game(){
+  //Event listener for user keypress
+    document.onkeyup = function(event) {
+
+      hide('welcomeMessage');
+
+      show('gameboard');
+
+      // stores user input in this variable, only accepts unique keys and valid keys
+      var userGuess = uniqueGuess(keyVal(alphabet, String.fromCharCode(event.keyCode).toLowerCase()), guesses);
+
+      // pushes the user input to the guessess array 
+      guessVal(userGuess, guesses);
+
+      //If the user guesses correctly it will reveal in the blank tiles where the letter was
+      revealAt(userGuess, selectName, results, guessLeft);
+
+      artistName.textContent = results;
+
+      guessCount.innerText = guessLeft;
+
+      guessLetter.innerText = guesses;
+
+
+      winCondition(removeComma(results), selectName, guessLeft);
+      // document.getElementById('answer').innerText = selectName;
+
   }
 }
