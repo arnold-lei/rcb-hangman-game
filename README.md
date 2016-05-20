@@ -13,7 +13,7 @@ I am starting to think I went about this in the complete wrong way. My rule.js f
 ##Heroku
 
 The app can be found here on Heroku:
-[rcb-arnold-hangman-game.herokuapp.com](rcb-arnold-hangman-game.herokuapp.com)
+rcb-arnold-hangman-game.herokuapp.com
 
 ##To-Do Feature List
 

@@ -1,6 +1,6 @@
-#success{
+/*#success{
   display:none;
-}
+}*/
 
 #fail{
   display:none;
@@ -8,4 +8,14 @@
 
 #gameboard{
   display:none;
+}
+
+.container{
+  height:100%;
+
+}
+
+.footer{
+  position: absolute;
+  bottom: 0px;
 }

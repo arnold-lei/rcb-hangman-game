@@ -31,25 +31,31 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li><a>Number of Wins <span class= "badge" id="winCount"></span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
   <div class="container">
+
+
+  <!--Welcome message to players-->
   <div id="welcomeMessage">
     <h1>Press the spacebar to get started!</h1>
   </div>
+
+  <!-- Gameboard! -->
   <div id="gameboard">
     <h1>Welcome to Arnold's Hangman Game!</h1>
 
     <!-- win message -->
     <div class="alert alert-success row" role="alert" id="success">
       <div class="winMsg pull-left"></div>
+      <div class="artistInfo"></div>
       <div class="btn-group pull-right" role="group" aria-label="">       
         <button type="button" class="btn btn-success" id="reset" onclick="reset()">Replay</button>
-        <button type="button" class="btn btn-success" onclick="reset()">Quit</button>
+        <button type="button" class="btn btn-success" onclick="quit()">Quit</button>
       </div>
     </div>
 
@@ -58,7 +64,7 @@
       <div class="loseMsg pull-left"></div>
       <div class="btn-group pull-right" role="group" aria-label="">
         <button type="button" class="btn btn-danger" id="reset" onclick="reset()">Replay</button>
-        <button type="button" class="btn btn-danger">Quit</button>
+        <button type="button" class="btn btn-danger" onclick="quit()">Quit</button>
       </div>
     </div>
 
@@ -81,7 +87,17 @@
       </div>
     </div>
   </div>
+    <!-- Footer -->
+  <footer>
+    <div class="footer">
+      <h3>Footer</h3>
+    </div>
+  </footer>
   </div><!--End of Container-->
+
+
+
+
   <script type="text/javascript" src="assets/js/rules.js"></script>
   <script type="text/javascript" src="assets/js/game.js"></script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
