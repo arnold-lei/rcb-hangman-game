@@ -21,8 +21,8 @@ rcb-arnold-hangman-game.herokuapp.com
 
 ##To-Do Feature List
 
-*~~add a quit feature~~
-*~~remove commas from the results~~
-*~~stop the gameboard from appearing on load~~
-*~~style the site~~
-*user controled variable guess counts
+~~ 1. add a quit feature~~
+~~2.remove commas from the results~~
+~~3. stop the gameboard from appearing on load~~
+~~4. style the site~~
+5. user controled variable guess counts
