@@ -68,12 +68,7 @@
 
   //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
-
-  var resetEl = document.getElementById('reset');
-
-  var playagain = true;
   
-  // resetEl.addEventListener('click', reset()); 
 
 //Generates an alphabet
 function chars(charA, charZ) {
@@ -211,8 +206,6 @@ function reset(){
 
   document.querySelector('#success').style.display = 'none';
 
-  document.querySelector('#fail').style.display = 'none';
-
   console.log('reset!');
 }
 
@@ -259,8 +252,17 @@ function showArtistPic(artist, artistPic){
 
 function quit(){
 
-  document.querySelector('#success').style.display = 'block';
+    reset();
 
-  document.querySelector('.winMsg').innerHTML ='<h1>Thanks for playing! You won a total of ' + winCount + ' times <h1>';
+    show('welcomeMessage');
+
+    hide('gameboard');
+
+    winCount = 0;
+
+    wins.innerHTML = winCount;
+
+  document.querySelector('.msg').innerHTML ='<h1>Thanks for playing! You won a total of ' + winCount + ' times <h1>';
+  console.log('quite the game');  
 
 }
