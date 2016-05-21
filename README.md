@@ -10,6 +10,10 @@ I think this project is a bit of a mess. There are some functions I should have 
 
 I am starting to think I went about this in the complete wrong way. My rule.js file is getting really out of hand. I should have gone with an OOP approace. I tried for a very long time to convert the whole thing to an object but now it's a little too late to do that. I  have some test files where I tried but nothing really worked. I've been tweaking this thing forever, at some point i'm going to have to add some styling to it. Honestly I like adding features over styling right now. 
 
+5/21/2016 --- I added a lot of features today. I got the project finally to a point where I felt the logic was all working as it should be. Today I added a lot of styling and extra features. I now have artist features and i've also linked their spotify songs. Hopefully the songs will work for those that don't have spotify accounts. I was unable to find anything that lets people stream their music for free. 
+
+There is still a lot of testing I need to do. 
+
 ##Heroku
 
 The app can be found here on Heroku:
@@ -17,8 +21,8 @@ rcb-arnold-hangman-game.herokuapp.com
 
 ##To-Do Feature List
 
-*add a quit feature
-*remove commas from the results
-*stop the gameboard from appearing on load
-*style the site
+~~*add a quit feature~~
+~~*remove commas from the results~~
+~~*stop the gameboard from appearing on load~~
+~~*style the site~~
 *user controled variable guess counts

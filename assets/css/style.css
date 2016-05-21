@@ -23,6 +23,7 @@
 
 body{
   font-family: 'museo_sans500';
+  background-image: url('../img/dark_embroidery.png');
 }
 
 h1,h2{
@@ -34,12 +35,11 @@ p{
   text-align: justify;
 }
 
-
-#success{
-  display:none;
+.alert-success{
+  background-color: #009933;
 }
 
-#fail{
+#success{
   display:none;
 }
 

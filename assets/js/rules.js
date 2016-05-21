@@ -14,7 +14,6 @@
     'Gene Krupa': '<h1>Gene Krupa</h1><br/>Eugene Bertram "Gene" Krupa (January 15, 1909 - October 16, 1973) was an American jazz and big band drummer, band leader, actor, and composer. Known for his highly energetic, flamboyant style and for his showmanship, Krupa is considered one of the most influential drummers in jazz history and one of the first major percussive soloists.',
     'Jimmie Lunceford': '<h1>Jimmie Lunceford</h1><br/>James Melvin "Jimmie" Lunceford (June 6, 1902 - July 12, 1947) was an American jazz alto saxophonist and bandleader in the swing era. <br/> Lunceford was born on a farm in the Evergreen community, west of the Tombigbee River, near Fulton, Mississippi. The 53 acre farm was owned by his father, James. His mother was Idella ("Ida") Shumpert of Oklahoma City, an organist of "more than average ability." Seven months after James Melvin was born, the family moved to Oklahoma City.[2][3] The family next moved to Denver where Lunceford went to high school and studied music under Wilberforce J. Whiteman, father of Paul Whiteman, whose band was soon to acquire a national reputation. As a child in Denver, he learned several instruments. After high school, Lunceford continued his studies at Fisk University.[4] In 1922, he played alto saxophone in a local band led by the violinist George Morrison which included Andy Kirk, another musician destined for fame as a bandleader.',
     'Count Basie': '<h1>Count Basie</h1><br/>William James "Count" Basie (August 21, 1904 - April 26, 1984) was an American jazz pianist, organist, bandleader, and composer. His mother taught him to play the piano and he started performing in his teens. Dropping out of school, he learned to operate lights for vaudeville and to improvise accompaniment for silent films at a local movie theater in his home town of Red Bank, New Jersey. By 16 years old, he increasingly played jazz piano at parties, resorts and other venues. In 1924, he went to Harlem, where his performing career expanded; he toured with groups to the major jazz cities of Chicago, St. Louis and Kansas City. In 1929 he joined Bennie Moten\'s band in Kansas City, and played with them until Moten\'s death in 1935. <br/> <br/>In 1935, Basie formed his own jazz orchestra, the Count Basie Orchestra, and in 1936 took them to Chicago for a long engagement and their first recording. He led the group for almost 50 years, creating innovations like the use of two "split" tenor saxophones, emphasizing the rhythm section, riffing with a big band, using arrangers to broaden their sound, and others. Many musicians came to prominence under his direction, including the tenor saxophonists Lester Young and Herschel Evans, the guitarist Freddie Green, trumpeters Buck Clayton and Harry "Sweets" Edison and singers Jimmy Rushing and Joe Williams. Basie\'s theme songs were "One O\'Clock Jump", developed in 1935 in the early days of his band, and later "April in Paris".',
-
   }
 
   var artistPic = {
@@ -26,6 +25,17 @@
     'Gene Krupa':'gene_krupa.jpg',
     'Jimmie Lunceford':'jimmie_lunceford.png',
     'Count Basie':'count_basie.jpg',
+  }
+
+  var artistSong = {
+    'Billie Holiday':'https://embed.spotify.com/?uri=spotify%3Atrack%3A0HAFFIr6YI9qa8lECz2uay',
+    'Ella Fitzgerald':'https://embed.spotify.com/?uri=spotify%3Atrack%3A5CMw1IWB7JOpUY9nk54n1K',
+    'Artie Shaw':'https://embed.spotify.com/?uri=spotify%3Atrack%3A4ki9qlNmyGbCl0YaJy3XuK',
+    'Duke Ellington':'https://embed.spotify.com/?uri=spotify%3Atrack%3A0MT3c0V4sYxLBYJWIgnwxa',
+    'Benny Goodman':'https://embed.spotify.com/?uri=spotify%3Atrack%3A2gXKmlCm7KIY5I8naTkbdU',
+    'Gene Krupa':'https://embed.spotify.com/?uri=spotify%3Atrack%3A7fK4RO6zPqy3fj7YroTlmB',
+    'Jimmie Lunceford':'https://embed.spotify.com/?uri=spotify%3Atrack%3A5Z4KnYouohw4dFP4qUK3Do',
+    'Count Basie':'https://embed.spotify.com/?uri=spotify%3Atrack%3A08A2Kb6BMw2lB1VwdcXaXx',
   }
   //Chooeses a random name form the word bank
   var selectName = chooseName(nameBank);
@@ -150,11 +160,12 @@ function hide(id){
   document.getElementById(id).style.display = 'none';
 }
 
-
 function winCondition(result, name, guess){
   if (result == name) {
     show('success');
     $('.end').attr('class','alert alert-success row');
+    $('#music').attr('src',artistSong[selectName]);
+
     winCount = winCount + 1;
     wins.innerHTML = winCount;
     document.querySelector('.msg').innerHTML ='Congratulations you\'ve won!<br/>';
@@ -163,7 +174,7 @@ function winCondition(result, name, guess){
     show('success');
     $('.end').attr('class','alert alert-danger row');
     $('.btn').attr('class','btn btn-danger');
-    document.querySelector('.msg').innerHTML='Sorry you lost!<br/>';
+    document.querySelector('.msg').innerHTML='Sorry, you lost!<br/>';
     console.log('Sorry you lost');
     gameState = 'end';
   }
