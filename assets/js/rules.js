@@ -66,6 +66,8 @@
 
   var winCount = 0; 
 
+  var userGuess;
+
   //setting up the artist name to be guessed in blank tiles
   var result = blanks(results, selectName);
   
@@ -162,13 +164,16 @@ function winCondition(result, name, guess){
     $('.end').attr('class','alert alert-success row');
     $('#music').attr('src',artistSong[selectName]);
 
-    winCount = winCount + 1;
+    ++winCount;
+
     wins.innerHTML = winCount;
     document.querySelector('.msg').innerHTML ='Congratulations you\'ve won!<br/>';
     gameState = 'end';
   }else if (guess <= 0 ){
     show('success');
+    document.querySelector('.artistName').innerHTML = selectName;
     $('.end').attr('class','alert alert-danger row');
+    $('#music').attr('src',artistSong[selectName]);
     $('.btn').attr('class','btn btn-danger');
     document.querySelector('.msg').innerHTML='Sorry, you lost!<br/>';
     console.log('Sorry you lost');
@@ -207,6 +212,9 @@ function reset(){
 
   document.querySelector('#success').style.display = 'none';
 
+  //If the user guesses correctly it will reveal in the blank tiles where the letter was
+  revealAt(userGuess, selectName, results, guessLeft);
+
   console.log('reset!');
 }
 
@@ -219,7 +227,7 @@ function game(){
       show('gameboard');
 
       // stores user input in this variable, only accepts unique keys and valid keys
-      var userGuess = uniqueGuess(keyVal(alphabet, String.fromCharCode(event.keyCode).toLowerCase()), guesses);
+      userGuess = uniqueGuess(keyVal(alphabet, String.fromCharCode(event.keyCode).toLowerCase()), guesses);
 
       // pushes the user input to the guessess array 
       guessVal(userGuess, guesses);
@@ -236,7 +244,6 @@ function game(){
       showArtistInfo(selectName, artistInfo)
 
       showArtistPic(selectName, artistPic)
-
 
       winCondition(removeComma(results), selectName, guessLeft);
 
