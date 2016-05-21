@@ -7,6 +7,7 @@
 
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/slate.css">
 
 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -49,10 +50,10 @@
   <div id="gameboard">
     <h1>Welcome to Arnold's Hangman Game!</h1>
 
-    <!-- win message -->
-    <div class="alert alert-success row" role="alert" id="success">
+    <!-- win and lose message -->
+    <div class="end row" role="alert" id="success">
       <div class="pull-left">
-        <h1 class="winMsg"></h1>
+        <h1 class="msg"></h1>
         <div class="row">
           <div class="col-md-4">
             <img class="artistPic" src="">
@@ -68,22 +69,12 @@
       </div>
     </div>
 
-    <!-- lose message -->
-    <div class="alert alert-danger row" role="alert" id="fail">
-      <div class="loseMsg pull-left"></div>
-      <div class="artistBio"></div>
-      <div class="btn-group pull-right" role="group" aria-label="">
-        <button type="button" class="btn btn-danger" id="reset" onclick="reset()">Replay</button>
-        <button type="button" class="btn btn-danger" onclick="quit()">Quit</button>
-      </div>
-    </div>
-
     <h1 id="answer"></h1>
       <div class="row">
         <div class="gameArea col-md-8">
           <div>
             <h2>Guess the Artist's Name!</h2>
-            <h3 id="artistName"></h3>
+            <h1 id="artistName"></h1>
           </div>
       </div>
       <div class="infoArea col-md-4">
@@ -98,11 +89,11 @@
     </div>
   </div>
     <!-- Footer -->
-  <footer>
+<!--   <footer>
     <div class="footer">
       <h3>Footer</h3>
     </div>
-  </footer>
+  </footer> -->
   </div><!--End of Container-->
 
 
