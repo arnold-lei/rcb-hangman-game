@@ -51,8 +51,17 @@
 
     <!-- win message -->
     <div class="alert alert-success row" role="alert" id="success">
-      <div class="winMsg pull-left"></div>
-      <div class="artistInfo"></div>
+      <div class="pull-left">
+        <h1 class="winMsg"></h1>
+        <div class="row">
+          <div class="col-md-4">
+            <img class="artistPic" src="">
+          </div>
+          <div class="col-md-8">
+            <p class="artistBio"></p>
+          </div>
+        </div>
+      </div>
       <div class="btn-group pull-right" role="group" aria-label="">       
         <button type="button" class="btn btn-success" id="reset" onclick="reset()">Replay</button>
         <button type="button" class="btn btn-success" onclick="quit()">Quit</button>
@@ -62,6 +71,7 @@
     <!-- lose message -->
     <div class="alert alert-danger row" role="alert" id="fail">
       <div class="loseMsg pull-left"></div>
+      <div class="artistBio"></div>
       <div class="btn-group pull-right" role="group" aria-label="">
         <button type="button" class="btn btn-danger" id="reset" onclick="reset()">Replay</button>
         <button type="button" class="btn btn-danger" onclick="quit()">Quit</button>

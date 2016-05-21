@@ -1,6 +1,6 @@
-/*#success{
+#success{
   display:none;
-}*/
+}
 
 #fail{
   display:none;
@@ -15,7 +15,11 @@
 
 }
 
-.footer{
+/*.footer{
   position: absolute;
   bottom: 0px;
+}*/
+
+.artistPic{
+  width:100%;
 }
