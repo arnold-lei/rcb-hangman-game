@@ -163,9 +163,7 @@ function winCondition(result, name, guess){
     document.querySelector('.artistName').innerHTML = selectName;
     $('.end').attr('class','alert alert-success row');
     $('#music').attr('src',artistSong[selectName]);
-
     ++winCount;
-
     wins.innerHTML = winCount;
     document.querySelector('.msg').innerHTML ='Congratulations you\'ve won!<br/>';
     gameState = 'end';
